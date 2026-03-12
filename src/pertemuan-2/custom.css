@@ -1,0 +1,104 @@
+/* Import font yang bulat, ramah, dan ceria */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Quicksand:wght@300;500;700&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    /* Background Gradient Pelangi Pastel yang Segar */
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%), 
+                linear-gradient(to top, #a1887f 0%, #fbc2eb 100%);
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); /* Blue Sky vibe */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* --- MOTIF BATIK CERIA (MEGAMENDUNG VIBE) --- */
+/* Kita pakai awan-awan batik warna-warni di background */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><path d="M40 60 Q60 20 100 60 T160 60" stroke="%23ff9a9e" fill="none" stroke-width="8" opacity="0.3"/><path d="M20 120 Q50 80 90 120 T170 120" stroke="%23fad0c4" fill="none" stroke-width="12" opacity="0.4"/><circle cx="150" cy="150" r="20" fill="%23a1c4fd" opacity="0.2"/></svg>');
+    background-size: 300px 300px;
+    z-index: -1;
+    animation: floatPattern 20s linear infinite;
+}
+
+@keyframes floatPattern {
+    from { background-position: 0 0; }
+    to { background-position: 300px 300px; }
+}
+
+/* --- CARD GLASSMORPHISM TERANG --- */
+.card {
+    max-width: 500px;
+    width: 85%;
+    background: rgba(255, 255, 255, 0.7); /* Putih transparan */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 45px;
+    border-radius: 40px; /* Sangat membulat agar ramah di mata */
+    border: 4px solid #ffffff; /* Border putih solid agar tegas */
+    box-shadow: 
+        0 20px 40px rgba(161, 196, 253, 0.4), 
+        0 10px 10px rgba(255, 154, 158, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: 0 30px 50px rgba(161, 196, 253, 0.6);
+}
+
+/* --- HEADER SUPER CERIA --- */
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 15px;
+    /* Gradient warna permen: Pink ke Orange */
+    background: linear-gradient(to right, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0px rgba(255,255,255,0.5));
+}
+
+/* --- PARAGRAF BERSIH --- */
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #5d6d7e; /* Abu-abu biru yang soft */
+    font-weight: 500;
+}
+
+/* --- GARIS PEMISAH PELANGI --- */
+hr {
+    border: none;
+    height: 6px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+    border-radius: 10px;
+    margin: 25px auto;
+    width: 60%;
+}
+
+/* --- GREETING KECIL --- */
+small {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #ff7eb3;
+    color: white;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(255, 126, 179, 0.4);
+    font-style: normal;
+}
