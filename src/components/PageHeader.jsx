@@ -1,19 +1,36 @@
-export default function PageHeader() {
+export default function PageHeader({ title, breadcrumb, children }) {
   return (
     <div id="pageheader-container" className="flex items-center justify-between p-4">
+      
+      {/* LEFT */}
       <div id="pageheader-left" className="flex flex-col">
-        <span id="page-title" className="text-3xl font-semibold">Dashboard</span>
+        
+        {/* TITLE */}
+        <span id="page-title" className="text-3xl font-semibold">
+          {title}
+        </span>
+
+        {/* BREADCRUMB */}
         <div id="breadcrumb-links" className="flex items-center font-medium space-x-2 mt-2">
-          <span id="breadcrumb-home" className="text-gray-500">Dashboard</span>
-          <span id="breadcrumb-separator" className="text-gray-500">/</span>
-          <span id="breadcrumb-current" className="text-gray-500">Order List</span>
+          {Array.isArray(breadcrumb)
+            ? breadcrumb.map((item, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <span className="text-gray-500">{item}</span>
+                  {index < breadcrumb.length - 1 && (
+                    <span className="text-gray-500">/</span>
+                  )}
+                </div>
+              ))
+            : <span className="text-gray-500">{breadcrumb}</span>
+          }
         </div>
       </div>
+
+      {/* RIGHT (ACTION / BUTTON / FILTER / DLL) */}
       <div id="action-button">
-        <button id="add-button" className="bg-hijau text-white px-4 py-2 rounded-lg font-bold shadow-md">
-          + Add Button
-        </button>
+        {children}
       </div>
+
     </div>
   );
 }

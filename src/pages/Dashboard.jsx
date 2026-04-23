@@ -21,7 +21,14 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <PageHeader />
+      <PageHeader
+  title="Dashboard"
+  breadcrumb={["Dashboard", "Overview"]}
+>
+  <button className="bg-hijau text-white px-4 py-2 rounded-lg font-bold shadow-md">
+    + Add Data
+  </button>
+</PageHeader>
 
       {/* Stats Cards */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

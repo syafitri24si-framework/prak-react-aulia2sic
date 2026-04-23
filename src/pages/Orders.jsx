@@ -4,7 +4,10 @@ import PageHeader from "../components/PageHeader";
 export default function Orders() {
   return (
     <div className="space-y-6">
-      <PageHeader />
+      <PageHeader
+  title="Orders"
+  breadcrumb={["Dashboard", "Orders"]}
+/>
       <p> iNI HALAMAN ORDERS</p>
     </div>
   );
