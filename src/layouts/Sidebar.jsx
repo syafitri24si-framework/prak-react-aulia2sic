@@ -1,29 +1,36 @@
-import { FaPlus, FaTachometerAlt, FaShoppingBag, FaUsers, FaChartLine, FaCog } from "react-icons/fa";
-import { Link, NavLink } from "react-router-dom";
+import { FaPlus, FaTachometerAlt, FaShoppingBag, FaUsers, FaChartLine, FaCog, FaExclamationTriangle } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   
   const menuItems = [
-    { name: "Dashboard", icon: <FaTachometerAlt />, active: true, to: "/" },
-    { name: "Orders", icon: <FaShoppingBag />, active: false, to: "/Orders" },
-    { name: "Customers", icon: <FaUsers />, active: false, to: "/Customers" },
-    { name: "Analytics", icon: <FaChartLine />, active: false, to: "#" },
-    { name: "Settings", icon: <FaCog />, active: false, to: "#" },
+    { name: "Dashboard", icon: <FaTachometerAlt />, to: "/" },
+    { name: "Orders", icon: <FaShoppingBag />, to: "/Orders" },
+    { name: "Customers", icon: <FaUsers />, to: "/Customers" },
+
+    // 🔥 ERROR MENU (DITAMBAHKAN)
+    { name: "Error 400", icon: <FaExclamationTriangle />, to: "/error-400" },
+    { name: "Error 401", icon: <FaExclamationTriangle />, to: "/error-401" },
+    { name: "Error 403", icon: <FaExclamationTriangle />, to: "/error-403" },
+
+    // { name: "Analytics", icon: <FaChartLine />, to: "#" },
+    // { name: "Settings", icon: <FaCog />, to: "#" },
   ];
-   const menuClass = ({ isActive }) =>
-        `flex cursor-pointer items-center rounded-xl p-4  space-x-2
-        ${isActive ? 
-            "text-hijau bg-green-200 font-extrabold" : 
-            "text-gray-600 hover:text-hijau hover:bg-green-200 hover:font-extrabold"
-        }`
+
+  const menuClass = ({ isActive }) =>
+    `flex cursor-pointer items-center rounded-xl p-4 space-x-2
+    ${isActive ? 
+      "text-hijau bg-green-200 font-extrabold" : 
+      "text-gray-600 hover:text-hijau hover:bg-green-200 hover:font-extrabold"
+    }`;
 
   return (
-    <div className="flex min-h-screen w-80 flex-col bg-white/90 backdrop-blur-md shadow-2xl rounded-r-3xl border-r border-white/30 transition-all duration-300">
+    <div className="flex min-h-screen w-80 flex-col bg-white/90 backdrop-blur-md shadow-2xl rounded-r-3xl border-r border-white/30">
 
       {/* Logo */}
       <div className="flex flex-col p-6 border-b border-gray-100">
         <span className="font-poppins text-[48px] text-gray-800 tracking-tight">
-          Sedap <b className="text-hijau drop-shadow-md">.</b>
+          Sedap <b className="text-hijau">.</b>
         </span>
         <span className="font-semibold text-gray-400 text-sm">
           Modern Admin Dashboard
@@ -32,49 +39,41 @@ export default function Sidebar() {
 
       {/* Menu */}
       <div className="mt-6 px-4">
-        <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Main Menu</p>
+        <p className="text-xs font-bold text-gray-400 uppercase mb-4">Main Menu</p>
+
         <ul className="space-y-2">
           {menuItems.map((item, idx) => (
-            <NavLink
-              key={idx}
-              to={item.to}
-              className={menuClass}
-            >
+            <NavLink key={idx} to={item.to} className={menuClass}>
               <span className="text-lg">{item.icon}</span>
               <span>{item.name}</span>
-              {item.active && (
-                <span className="ml-auto w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
-              )}
             </NavLink>
           ))}
         </ul>
       </div>
 
-      {/* Footer */}
+      {/* Footer tetap */}
       <div className="mt-auto p-4">
-        <div className="bg-gradient-to-br from-hijau to-green-600 px-4 py-4 rounded-2xl shadow-xl mb-6 transition-all duration-300 hover:scale-[1.02]">
+        <div className="bg-gradient-to-br from-hijau to-green-600 px-4 py-4 rounded-2xl mb-6">
           <div className="text-white text-sm space-y-3">
-            <span className="font-semibold">Organize your menus through button below!</span>
-            <div className="flex justify-between items-center p-2 bg-white/20 backdrop-blur-md rounded-xl cursor-pointer hover:bg-white/30 transition-all group">
+            <span>Organize your menus through button below!</span>
+            <div className="flex justify-between items-center p-2 bg-white/20 rounded-xl cursor-pointer">
               <div className="flex items-center space-x-2 text-white">
-                <FaPlus className="group-hover:rotate-90 transition-transform duration-300" />
-                <span className="font-medium">Add Menus</span>
+                <FaPlus />
+                <span>Add Menus</span>
               </div>
               <img
                 src="https://avatar.iran.liara.run/public/28"
-                className="w-8 h-8 rounded-full border-2 border-white shadow-md"
+                className="w-8 h-8 rounded-full"
               />
             </div>
           </div>
         </div>
 
-        <div className="text-center">
-          <span className="font-bold text-gray-500 text-sm">Sedap Restaurant Admin Dashboard</span>
-          <p className="font-light text-gray-400 text-xs mt-1">
-            &copy; 2025 All Right Reserved
-          </p>
+        <div className="text-center text-sm text-gray-400">
+          &copy; 2025 Sedap Dashboard
         </div>
       </div>
+
     </div>
   );
 }
