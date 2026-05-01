@@ -5,8 +5,8 @@ export default function Sidebar() {
   
   const menuItems = [
     { name: "Dashboard", icon: <FaTachometerAlt />, to: "/" },
-    { name: "Orders", icon: <FaShoppingBag />, to: "/Orders" },
-    { name: "Customers", icon: <FaUsers />, to: "/Customers" },
+    { name: "Orders", icon: <FaShoppingBag />, to: "/orders" },
+    { name: "Customers", icon: <FaUsers />, to: "/customers" },
 
     // 🔥 ERROR MENU (DITAMBAHKAN)
     { name: "Error 400", icon: <FaExclamationTriangle />, to: "/error-400" },
