@@ -46,7 +46,7 @@ export default function Header() {
         {/* Profile */}
         <div className="flex items-center space-x-4 border-l pl-4 border-gray-200">
           <div className="text-right">
-            <span className="text-sm text-gray-500">Welcome back,</span>
+            <span className="text-sm text-gray-500">Selamat Datang Kembali,</span>
             <p className="font-bold text-gray-800">Aulia Syafitri</p>
           </div>
           <div className="relative group">
