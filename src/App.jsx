@@ -30,6 +30,7 @@ function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="/products/:id" element={<ProductDetail />} />
           <Route path="/products" element={<Products />} />
+          
         </Route>
 
         <Route element={<AuthLayout />}>
