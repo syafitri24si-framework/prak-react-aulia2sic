@@ -7,6 +7,7 @@ export default function Sidebar() {
     { name: "Dashboard", icon: <FaTachometerAlt />, to: "/" },
     { name: "Orders", icon: <FaShoppingBag />, to: "/orders" },
     { name: "Customers", icon: <FaUsers />, to: "/customers" },
+    { name: "Products", icon: <FaShoppingBag />, to: "/products" },
 
     // 🔥 ERROR MENU (DITAMBAHKAN)
     { name: "Error 400", icon: <FaExclamationTriangle />, to: "/error-400" },

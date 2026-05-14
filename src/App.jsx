@@ -10,6 +10,8 @@ const AuthLayout = React.lazy(() => import("./layouts/AuthLayout"));
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Orders = React.lazy(() => import("./pages/Orders"));
 const Customers = React.lazy(() => import("./pages/Customers"));
+const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
+const Products = React.lazy(() => import("./pages/Products"));
 
 const Login = React.lazy(() => import("./pages/auth/Login"));
 const Register = React.lazy(() => import("./pages/auth/Register"));
@@ -26,6 +28,8 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/products" element={<Products />} />
         </Route>
 
         <Route element={<AuthLayout />}>
