@@ -49,7 +49,7 @@ export default function Dashboard() {
       </div>
 
       <h2 className="text-2xl font-bold">
-        Welcome back, {user?.username} 👋
+        Selamat Datang Kembali, {user?.username} 👋
       </h2>
       <p className="text-sm opacity-90 mt-2 max-w-md">
         Kamu punya performa yang bagus hari ini. Yuk lanjutkan monitoring dan kelola bisnismu 🚀
