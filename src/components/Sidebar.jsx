@@ -8,6 +8,8 @@ export default function Sidebar() {
     { name: "Orders", icon: <FaShoppingBag />, to: "/orders" },
     { name: "Customers", icon: <FaUsers />, to: "/customers" },
     { name: "Products", icon: <FaShoppingBag />, to: "/products" },
+    { name: "Components", icon: <FaShoppingBag />, to: "/components" },
+
 
     // 🔥 ERROR MENU (DITAMBAHKAN)
     { name: "Error 400", icon: <FaExclamationTriangle />, to: "/error-400" },
