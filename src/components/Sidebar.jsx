@@ -9,6 +9,8 @@ export default function Sidebar() {
     { name: "Customers", icon: <FaUsers />, to: "/customers" },
     { name: "Products", icon: <FaShoppingBag />, to: "/products" },
     { name: "Components", icon: <FaShoppingBag />, to: "/components" },
+    { name: "FiturXYZ", icon: <FaShoppingBag />, to: "/fiturXYZ" },
+
 
 
     // 🔥 ERROR MENU (DITAMBAHKAN)
